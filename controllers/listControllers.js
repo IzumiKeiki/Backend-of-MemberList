@@ -32,7 +32,7 @@ export const insertData = (req, res) => {
       res.status(500).json({ error: "Failed to insert data" });
     } else {
       const newItem = {
-        id: result.inserId,
+        id: result[0].insertId,
         name,
         skills,
         status,

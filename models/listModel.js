@@ -11,12 +11,12 @@ export const fetchAllData = (id, callback) => {
 };
 
 export const insertData = (name, skills, status, userID, callback) => {
-  const query = "INSERT INTO list (name, skills, status, userID) VALUES (?, ?, ?, ?)";
+  const query = "SELECT insert_data(?, ?, ?, ?) as insertId";
   db.query(query, [name, skills, status, userID], callback);
 };
 
 export const updateData = (id, name, skills, status, userID, callback) => {
-  const query = "UPDATE list SET name = ?, skills = ?, status = ? WHERE id = ?";
+  const query = "CALL update_data(?, ?, ?, ?)";
   db.query(query, [name, skills, status, id, userID], callback);
 };
 
